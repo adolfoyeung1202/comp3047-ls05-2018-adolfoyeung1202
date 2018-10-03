@@ -17,7 +17,7 @@ module.exports = {
       type: "string"
     },
     age: {
-      type: "string"
+      type: "number"
     }
 
 
@@ -29,6 +29,15 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+
+  },
+
+  getInvalidIdMsg: function (opts) {
+
+    if (typeof opts.id === "undefined" || isNaN(parseInt(opts.id)))
+      return "Person id not specified or with incorrect type.";
+
+    return null;        // falsy
 
   },
 
